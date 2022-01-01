@@ -1,0 +1,81 @@
+
+.arrivals .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem ,1fr));
+    gap: 1.5rem;
+
+}
+.arrivals .box-container .box{
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.arrivals .box-container .box .image{
+    height: 40rem;
+    width: 100%;
+    overflow: hidden;
+}
+.arrivals .box-container .box .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.arrivals .box-container .box:hover .image img{
+    transform: scale(1.2);
+
+}
+.arrivals .box-container .box .icons{
+    position: absolute;
+    right: -6rem;
+    top: 0;
+    z-index: 1;
+}
+.arrivals .box-container .box:hover .icons{
+    right:1rem;
+}
+
+
+
+.arrivals .box-container .box .icons a{
+   height: 4.5rem;
+   line-height: 4.5rem;
+   width: 4.5rem;
+   border-radius: 50%;
+   font-size: 2rem;
+   color: var(--black);
+   background: #fff;
+   margin-top: 1rem;
+   display: block;
+}
+.arrivals .box-container .box .icons a:hover{
+    color: #fff;
+    background: var(--main-color);
+ }
+
+ .arrivals .box-container .box .content{
+     padding-top: 1rem 0;
+ }
+
+ .arrivals .box-container .box .content h3{
+     font-weight: normal;
+     color:#fff;
+     font-size: 2.5rem;
+}
+
+
+.arrivals .box-container .box .content .price{
+    font-weight: bolder;
+    color:var(--main-color);
+
+    font-size: 2rem;
+}
+.arrivals .box-container .box .content .price span{
+    font-weight: normal;
+    text-decoration: line-through;
+    font-size: 1.8rem;
+    color:#fff;
+
+}

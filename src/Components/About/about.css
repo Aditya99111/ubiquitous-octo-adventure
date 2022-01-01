@@ -1,0 +1,40 @@
+
+.about{
+    background: url(../../Assets/about.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.about .content{
+    padding: 13rem 0;
+    max-width: 50rem;
+}
+.about .content h3{
+    font-size: 3rem;
+    color: var(--main-color);
+}
+.about .content p{
+    font-size: 1.5rem;
+    color: #fff;
+    line-height: 2;
+    padding: 1rem 0 ;
+}
+.aboutpage{
+    background: url(../../Assets/about.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.aboutpage .content{
+    padding: 13rem 0;
+    max-width: 50rem;
+}
+.aboutpage .content h3{
+    font-size: 3rem;
+    color: var(--main-color);
+}
+.aboutpage .content p{
+    font-size: 1.8rem;
+    color: #fff;
+    line-height: 2;
+    padding: 1rem 0 ;
+}
+       

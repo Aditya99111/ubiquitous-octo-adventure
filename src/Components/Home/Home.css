@@ -1,0 +1,39 @@
+
+.home{
+    padding:0;
+
+}
+
+.home .home-slider .box{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:2rem;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+.home .home-slider .box .content{
+    text-align: center;
+}
+
+.home .home-slider .box .content h3{
+    font-size: 5rem;
+    color:#fff;
+    transition-delay: .2s;
+}
+
+.home .home-slider .box .content p{
+    font-size: 3rem;
+    color:#fff;
+    transition-delay: .4s;
+    padding:1rem 0;
+}
+
+.home .home-slider .box .content .button{
+    transition-delay: .6s;
+}
+.bg1{
+    background-image: url(../../Assets/home.jpg);
+}

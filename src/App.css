@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Griffy&display=swap');
+:root{
+    --main-color:#ef7819;
+    --black:#141215;
+}
+  
+
+*{
+    font-family: 'Poppins', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+    transition: width none;
+    outline: none;
+    border: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none;
+            user-select: none;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+
+}
+
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+html::-webkit-scrollbar-track{
+    background: var(--black);
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+
+}
+
+body{
+    overflow-x:hidden ;
+    background: var(--black);
+ 
+}
+
+section{
+    padding: 2rem 9%;
+}
+
+.heading{
+    font-size: 4rem;
+    text-align: center;
+    padding-bottom: 2rem;
+    color: #fff;
+}
+.heading span {
+    color: var(--main-color);
+}
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    background: #fff;
+    color: var(--black);
+    font-weight: 500;
+    cursor: pointer;
+    padding: .8rem 3rem;
+}
+
+.btn:hover{
+
+    color: #fff;
+    background: var(--main-color);
+    letter-spacing: .1rem;
+}
+
+
+@media (max-width:991px){
+
+    html{
+        font-size:55%;
+    }
+
+    .header{
+        padding:2rem;
+    }
+
+    .header.active{
+        padding:2rem;
+    }
+
+    section{
+        padding:2rem;
+    }
+
+}
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+    .header .search-form{
+        width:90%;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top:99%; left:0; right:0;
+        background:#222;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    .header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    .header .navbar a{
+        display: block;
+        margin:2rem;
+        font-size: 2rem;
+    }
+
+}
+
+@media (max-width:451px) {
+    html{
+        font-size: 50%;
+    }
+
+.home .home-slider .swiper-button-prev,
+.home .home-slider .swiper-button-next{
+display: none;
+}
+    
+}
+
