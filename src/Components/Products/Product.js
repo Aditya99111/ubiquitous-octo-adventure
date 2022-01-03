@@ -1,5 +1,6 @@
 import React from 'react'
 import "./product.css"
+
 const Product = (props) => {
 
     return (
@@ -22,7 +23,7 @@ const Product = (props) => {
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star-half-alt"></i>
                             </div>
-                            <button className="btn">Buy Now<i classNameName="fas fa-shopping-cart"></i></button>
+                            <button className="btn">Buy Now<i className="fas fa-shopping-cart"></i></button>
                         </div>
                     </div>
                 </div>

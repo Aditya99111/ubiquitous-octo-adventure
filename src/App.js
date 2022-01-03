@@ -21,16 +21,16 @@ function App() {
     fetchProducts()
   }, [])
 
-console.log(products)
 return (
     <div>
 
     <Router>
     <Route exact path="/" component={Landing}/>
     <Route exact path="/cart" component={Cart}/>
-    <Route exact path="/products" component={Products}/>
+    <Route exact path="/products">
+      <Products products={products}/>
+    </Route>  
     <Route exact path="/about" component={AboutPage}/>
-
      </Router>
     </div>
   );
