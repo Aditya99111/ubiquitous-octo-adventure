@@ -1,8 +1,8 @@
 import React from 'react'
 import "./product.css"
 
-const Product = (props) => {
-
+const Product = (props,{OnAddToCart, products}) => {
+console.log(products)
     return (
         <>
             <div className="product" id={props.id} >
@@ -23,7 +23,7 @@ const Product = (props) => {
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star-half-alt"></i>
                             </div>
-                            <button className="btn">Buy Now<i className="fas fa-shopping-cart"></i></button>
+                            <button onClick={()=> OnAddToCart(products.id,1)} className="btn">Add to cart <i className="fas fa-shopping-cart"></i></button>
                         </div>
                     </div>
                 </div>

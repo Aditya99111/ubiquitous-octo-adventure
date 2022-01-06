@@ -1,17 +1,20 @@
 import React from "react";
 import Product from "./Product";
-import Product1 from "../../Assets/product1.jpg";
-
-const Products = ({ products }) => {
-  console.log(products);
+import Header from "../Header/Header"
+const Products = ({ products ,OnAddToCart}) => {
   return (
+    <>
+    <Header/>
     <div className="productspage">
       <h1 className="heading">
         our <span>products</span>
       </h1>
+
       {products.map((product) => {
         return (
           <Product
+            products={products}
+            OnAddToCart={OnAddToCart}
             title={product.name}
             id={product.id}
             discount="22%"
@@ -23,6 +26,7 @@ const Products = ({ products }) => {
         );
       })}
     </div>
+    </>
   );
 };
 export default Products;
