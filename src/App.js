@@ -39,8 +39,8 @@ function App() {
         <Route exact path="/">
           <Landing />
         </Route>  
-        <Route exact path="/cart" cart={cart}>
-          <Cart/>
+        <Route exact path="/cart" >
+          <Cart cart={cart}/>
         </Route>  
         <Route exact path="/products">
           <Products totalitems={cart.total_items} products={products} OnAddToCart={handleAddToCart} />
