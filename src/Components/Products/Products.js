@@ -1,10 +1,8 @@
 import React from "react";
 import Product from "./Product";
-import Header from "../Header/Header"
-const Products = ({ products ,OnAddToCart}) => {
+const Products = ({ products ,OnAddToCart,totalitems}) => {
   return (
     <>
-    <Header/>
     <div className="productspage">
       <h1 className="heading">
         our <span>products</span>

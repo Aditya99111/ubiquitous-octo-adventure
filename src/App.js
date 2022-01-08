@@ -6,6 +6,7 @@ import Cart from "./Components/Cart/Cart";
 import AboutPage from "./Components/About/AboutPage";
 import { commerce } from "./lib/commerce";
 import Products from "./Components/Products/Products";
+import { Header } from "./Components";
 function App() {
   const [products, setproducts] = useState([]);
 
@@ -34,10 +35,15 @@ function App() {
   return (
     <div>
       <Router>
-        <Route exact path="/" component={Landing} />
-        <Route exact path="/cart" component={Cart} />
+    <Header totalitems={cart.total_items}/>
+        <Route exact path="/">
+          <Landing />
+        </Route>  
+        <Route exact path="/cart" cart={cart}>
+          <Cart/>
+        </Route>  
         <Route exact path="/products">
-          <Products products={products} OnAddToCart={handleAddToCart} />
+          <Products totalitems={cart.total_items} products={products} OnAddToCart={handleAddToCart} />
         </Route>
         <Route exact path="/about" component={AboutPage} />
       </Router>
