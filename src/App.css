@@ -47,7 +47,7 @@ html::-webkit-scrollbar-thumb{
 
 body{
     overflow-x:hidden ;
-    background: var(--black);
+    background: var(--black) !important;
  
 }
 
