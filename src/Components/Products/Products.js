@@ -1,5 +1,8 @@
 import React from "react";
 import Product from "./Product";
+
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Products = ({ products ,OnAddToCart,totalitems}) => {
   return (
     <>
@@ -24,6 +27,7 @@ const Products = ({ products ,OnAddToCart,totalitems}) => {
         );
       })}
     </div>
+    <ToastContainer />
     </>
   );
 };

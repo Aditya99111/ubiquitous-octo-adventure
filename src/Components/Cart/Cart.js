@@ -1,24 +1,34 @@
 import React from "react";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Link } from "react-router-dom";
 import "./cart.css";
-const Cart = (props) => {
-  console.log(props.cart);
+const Cart = ({
+  cart ,
+  handleUpdateCartQty,
+  handleRemoveFromCart
+        }) => {
   const Emptycart = () => (
     <div className="empty_cart">
       <h1 className="heading">you have no items in your cart</h1>
+      <h1 className="heading"><Link to="/products">start adding some!</Link>  </h1>
+
     </div>
   );
 
   const Filledcart = () => (
     <div className="filled_cart">
       <div className="filled_cart_container">
-        {props.cart.line_items.map((item) => (
-          <div className="cart_item" key={item.id}>
-            <table>
-              <tr>
+      <table>
+      <tr>
                 <th>Product</th>
-                <th>Quantity</th>
+                <th className="qty">Quantity</th>
                 <th>Subtotal</th>
               </tr>
+      </table>
+        {cart.line_items.map((item) => (
+          <div className="cart_item" key={item.id}>
+            <table>
               <tr>
                 <td>
                   <div className="cart_info">
@@ -27,26 +37,26 @@ const Cart = (props) => {
                       <p>{item.name}</p>
                       <small>price: {item.price.formatted_with_symbol}</small>
                       <br />
-                      <a href="#">remove</a>
+                      <button onClick={()=> handleRemoveFromCart(item.id)}>remove</button>
                     </div>
                   </div>
                 </td>
-                <td>
-                  <button className="btn">+</button>
+                <td className="cart_item_quantity">
+                  <button className="btn" onClick={() => handleUpdateCartQty( item.id, item.quantity +1)}>+</button>
                   <p>{item.quantity}</p>
-                  <button className="btn">-</button>
+                  <button className="btn" onClick={() => handleUpdateCartQty(item.id, item.quantity -1)}>-</button>
                 </td>
-                <td>$50.00</td>
+                <td>${item.quantity*item.price.formatted}</td>
               </tr>
             </table>
           </div>
         ))}
-        ;
+        
         <div className="total_price">
           <table>
             <tr>
               <td>Subtotal</td>
-              <td>{props.cart.subtotal.formatted_with_symbol}</td>
+              <td>{cart.subtotal.formatted_with_symbol}</td>
             </tr>
             <tr>
               <td>Shiping</td>
@@ -54,17 +64,17 @@ const Cart = (props) => {
             </tr>
             <tr>
               <td>Total</td>
-              <td>$230.00</td>
+              <td>{cart.subtotal.formatted_with_symbol}</td>
             </tr>
 
-            <button className="btn">Checkout</button>
+            <Link to="/checkout"><button className="btn">Checkout</button></Link>
           </table>
         </div>
       </div>
     </div>
   );
 
-  if (!props.cart.line_items)
+  if (!cart.line_items)
     return <h1 className="heading">Loading... please wait</h1>;
 
   return (
@@ -72,7 +82,8 @@ const Cart = (props) => {
       <h1 className="heading">
         your<span> cart</span>
       </h1>
-      {!props.cart.line_items.length ? <Emptycart /> : <Filledcart />}
+      {!cart.line_items.length ? <Emptycart /> : <Filledcart />}
+      <ToastContainer />
     </div>
   );
 };

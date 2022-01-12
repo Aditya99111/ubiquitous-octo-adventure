@@ -1,24 +1,27 @@
 import React from 'react'
 import "./Header.css"
 import { Link } from 'react-router-dom'
-import Cart from '../Cart/Cart'
+import { HashLink } from 'react-router-hash-link';
+
 const Header = ({totalitems}) => {
     return (
         <header className="header">
         
-        <a href="#" className="logo">
+        <a href className="logo">
             <i className="fas fa-ghost"></i>
             logo
         </a>
 
         <nav className="navbar">
-            <a href="#home" className="active">Home</a>
-            <a href="#products">top picks</a>
-            <a href="#about">About</a>
-            <a href="/Products">Products</a>
-            <a href="#arrivals">arrivals</a>
-            <a href="#contact">contact</a>
+            <HashLink to="/#home" className="active">Home</HashLink>
+            <HashLink to="/#hot">top picks</HashLink>
+            <HashLink to="/#about">About</HashLink>
+            <HashLink to="/Products">Products</HashLink>
+            <HashLink to="/#arrivals">arrivals</HashLink>
+            <HashLink to="/#contact">contact</HashLink>
         </nav>
+
+        <div id="menu-btn" className="fas fa-bars"></div>
 
         <div className="icons">
             <div id="menu-btn" className="fas fa-bars"></div>
@@ -27,10 +30,6 @@ const Header = ({totalitems}) => {
             <a href="#" className="fas fa-user"></a>
         </div>
 
-        <form action="" className="search-form">
-            <input type="search" placeholder="search here.." id="input-box"/>
-            <label htmlFor="input-box" className="fas fa-search"></label>
-        </form>
     </header> 
  
     )

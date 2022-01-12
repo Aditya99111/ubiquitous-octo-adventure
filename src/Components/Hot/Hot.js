@@ -4,10 +4,10 @@ import { HashLink as Link } from 'react-router-hash-link';
 const Hot = (props) => {
     return (
         <div>
-            <Link to={props.productid}>
+            <Link to="#_">
                 <div className="box">
                     <div className="icons">
-                        <a href="#" className="fas fa-shopping-cart"></a>
+                        <a onClick={() => props.OnAddToCart(props.id, 1)} href="#" className="fas fa-shopping-cart"></a>
                         <a href="#" className="fas fa-eye"></a>
                         <a href="#" className="fas fa-share"></a>
                     </div>

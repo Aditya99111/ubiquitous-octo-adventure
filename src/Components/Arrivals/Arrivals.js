@@ -4,7 +4,7 @@ import { HashLink as Link } from 'react-router-hash-link';
 
 const Arrivals = (props) => {
     return (
-        <Link to={props.product_id}>
+        <Link to="#_">
             <div className="box">
                 <div className="icons">
                     <a href="#" className="fas fa-shopping-cart"></a>

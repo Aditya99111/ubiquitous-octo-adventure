@@ -1,41 +1,42 @@
 import React from 'react'
 import Hot from "./Hot"
-import Product1 from "../../Assets/product1.jpg"
-import Product2 from "../../Assets/product2.jpg"
-import Product3 from "../../Assets/product3.gif"
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./hot.css"
-const AddHot = () => {
+const AddHot = ({products, OnAddToCart}) => {
     return (
 
-        <section className="products" id="products">
+        <section className="products" id="hot">
             <h1 className="heading"><span>Hot</span> Deals!</h1>
             <div className="box-container">
-                <Hot
-                    name="Coffee Mugs"
-                    imageurl={Product1}
-                    productid="products/#1"
-                    price_before_discount="99.99"
-                    price_after_discount="79.00"
-                />
+            {products.slice(0,3).map((product) => {
+        return (
+          <Hot
+          OnAddToCart={OnAddToCart}
+            name={product.name}
+            id={product.id}
+            imageurl={product.image.url}
+            price_after_discount={product.price.raw}
+            price_before_discount="110"
+          />
+        );
+      })}
 
-                <Hot
-                    name="Cross"
-                    imageurl={Product2}
-                    productid="products/#2"
-                    price_before_discount="99.99"
-                    price_after_discount="79.00"
-                />
-
-                <Hot
-                    name="Glowing Mask"
-                    imageurl={Product3}
-                    productid="products/#3"
-                    price_before_discount="99.99"
-                    price_after_discount="79.00"
-                />
-                
+                                
 
             </div>
+            <ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+/>
         </section>
 
 
