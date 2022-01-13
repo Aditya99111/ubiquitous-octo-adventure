@@ -1,84 +1,91 @@
-.header .cart_quantity{
-    color: var(--main-color);
-    font-size: 1.5rem;
-    margin-left: .2rem;
-    text-align: center;
-    position: absolute;
-    background-color: var(--main-color);
-    margin-top: -.8rem;
-    background-color: #fff;
-    border-radius: 50%;
-    height: 20px;
-    width: 20px;
-    padding: .2rem;
-    padding-top: .3rem;
+.header .cart_quantity {
+  color: var(--main-color);
+  font-size: 1.5rem;
+  margin-left: 0.2rem;
+  text-align: center;
+  position: absolute;
+  background-color: var(--main-color);
+  margin-top: -0.8rem;
+  background-color: #fff;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  padding: 0.2rem;
+  padding-top: 0.3rem;
 }
-.header .fa-shopping-cart{
-    margin-right: 1rem;
+.header .fa-shopping-cart {
+  margin-right: 1rem;
 }
-.header .logo{
-    font-size: 2.5rem;
-    color: #fff;
-    font-weight: bolder;
+.header .logo {
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: bolder;
 }
-.header .logo i{
-    padding-right: .5rem;
-    color: var(--main-color);
-    animation: floating 2s linear infinite;
+.header .logo i {
+  padding-right: 0.5rem;
+  color: var(--main-color);
+  animation: floating 2s linear infinite;
 }
-@keyframes floating{
-    0%,100%{
-        transform: translateY(0rem);
-    }
-    50%{
-        transform: translateY(-1rem);
-    }
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(0rem);
+  }
+  50% {
+    transform: translateY(-1rem);
+  }
 }
-.header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: rgba(0, 0, 0, .5);
-    padding: 3rem 9%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 3rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.header .navbar a{
-    font-size: 1.7rem;
-    color: #fff;
-    margin: 0 1rem;
+.header .navbar a {
+  font-size: 1.7rem;
+  color: #fff;
+  margin: 0 1rem;
 }
 .header .navbar .active,
-.header .navbar a:hover{
-    color: var(--main-color);
+.header .navbar a:hover {
+  color: var(--main-color);
 }
 
 .header .icons a,
-.header .icons div{
-    font-size: 2.2rem;
-    color: #fff;
-    margin-left: 2rem;
-    cursor: pointer;
+.header .icons div {
+  font-size: 2.2rem;
+  color: #fff;
+  margin-left: 2rem;
+  cursor: pointer;
 }
 
 .header .icons a:hover,
-.header .icons div:hover{
-    color: var(--main-color);
+.header .icons div:hover {
+  color: var(--main-color);
 }
-#menu-btn{
-    display: none;
-}
-
-
-@media (max-width:991px){
-    #menu-btn{
-        display: inline-block;
-    }
-    
-  
-
+#menu-btn {
+  display: none;
 }
 
+@media (max-width: 991px) {
+  #menu-btn {
+    display: inline-block;
+  }
+}
+
+.navigation {
+  background-color: black;
+  height: 20vh;
+  width: 100vh;
+  margin-top: 150px;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+  padding-top: 20px;
+}
