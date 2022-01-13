@@ -7,9 +7,10 @@ const Addarrivals = ({ products, OnAddToCart }) => {
         <section className="arrivals" id="arrivals">
             <h1 className="heading">new <span>arrivals</span></h1>
             <div className="box-container">
-                {products.slice(0, 6).map((product) => {
+                {products.slice(3, 9).map((product) => {
                     return (
                         <Arrivals
+                        products={products}
                             name={product.name}
                             id={product.id}
                             imageurl={product.image.url}

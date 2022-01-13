@@ -1,15 +1,15 @@
 import React from 'react'
 import "./arrivals.css"
-import { HashLink as Link } from 'react-router-hash-link';
+import { HashLink } from 'react-router-hash-link';
 
 const Arrivals = (props) => {
     return (
-        <Link to="#_">
+        <HashLink to={`/products/#${props.id}`}>
             <div className="box">
                 <div className="icons">
-                    <a href="#" className="fas fa-shopping-cart"></a>
-                    <a href="#" className="fas fa-eye"></a>
-                    <a href="#" className="fas fa-share"></a>
+                    <a href className="fas fa-shopping-cart"></a>
+                    <a href={`/products/#${props.id}`} className="fas fa-eye"></a>
+                    <a href className="fas fa-share"></a>
                 </div>
                 <div className="image">
                     <img src={props.imageurl} alt="" />
@@ -19,7 +19,7 @@ const Arrivals = (props) => {
                     <div className="price">${props.price_after_discount}<span> ${props.price_before_discount}</span></div>
                 </div>
             </div>
-        </Link>
+        </HashLink>
     )
 }
 

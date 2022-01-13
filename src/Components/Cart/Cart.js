@@ -46,7 +46,7 @@ const Cart = ({
                   <p>{item.quantity}</p>
                   <button className="btn" onClick={() => handleUpdateCartQty(item.id, item.quantity -1)}>-</button>
                 </td>
-                <td>${item.quantity*item.price.formatted}</td>
+                <td>${item.quantity*item.price.formatted}.00</td>
               </tr>
             </table>
           </div>

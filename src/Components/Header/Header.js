@@ -27,7 +27,7 @@ const Header = ({totalitems}) => {
             <div id="menu-btn" className="fas fa-bars"></div>
             <div id="search-btn" className="fas fa-search"></div>
             <Link to="/Cart" className="fas fa-shopping-cart"><span className="cart_quantity">{totalitems}</span></Link>
-            <a href="#" className="fas fa-user"></a>
+            <a href className="fas fa-user"></a>
         </div>
 
     </header> 
