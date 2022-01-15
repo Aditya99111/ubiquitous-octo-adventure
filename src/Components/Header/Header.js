@@ -12,10 +12,10 @@ const Header = ({ totalitems }) => {
 
   return (
     <header className="header">
-      <a href className="logo">
+      <Link to="/" className="logo">
         <i className="fas fa-ghost"></i>
         logo
-      </a>
+      </Link>
 
       <nav className="navbar">
         <HashLink to="/#home" className="active">
@@ -34,17 +34,18 @@ const Header = ({ totalitems }) => {
           className="fas fa-bars"
           onClick={toggleHamburger}
         ></div>
-        <div id="search-btn" className="fas fa-search"></div>
+        <Link to="/products" className="fas fa-home"></Link>
+        <Link to="/support" className="fas fa-copy"></Link>
         <Link to="/Cart" className="fas fa-shopping-cart">
           <span className="cart_quantity">{totalitems}</span>
         </Link>
-        <a href className="fas fa-user"></a>
       </div>
 
       <div
         className="navigation"
         style={{ display: hamburgerOpen ? "inline" : "none" }}
       >
+      <div className="headerstyling">
         <HashLink to="/#home" className="active" style={{ fontSize: "17px",marginRight: "5px" }}>
           Home
         </HashLink>
@@ -54,6 +55,7 @@ const Header = ({ totalitems }) => {
         <HashLink to="/Products" style={{ fontSize: "17px",marginRight: "5px" }}>Products</HashLink>
         <HashLink to="/#arrivals" style={{ fontSize: "17px",marginRight: "5px" }}>arrivals</HashLink>
         <HashLink to="/#contact" style={{ fontSize: "17px",marginRight: "5px" }}>contact</HashLink>
+      </div>
       </div>
     </header>
   );

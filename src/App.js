@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-
+import Support from "./Components/support/Support"
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -16,12 +16,12 @@ function App() {
   const [cart, setCart] = useState({});
   const [order, setOrder] = useState({});
   const [errorMessage , setErrorMessage] = useState('')
+  const [shippingCost , setShippingCost] = useState("10")
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
 
     setproducts(data);
   };
-
   const fetchCart = async () => {
     setCart(await commerce.cart.retrieve());
   };
@@ -107,6 +107,8 @@ function App() {
         </Route> 
         <Route exact path="/checkout" >
           <Checkout 
+          shippingCost={shippingCost}
+          setShippingCost={setShippingCost}
           cart={cart}
           order={order}
           onCaptureCheckout={handleCaptureCheckout}
@@ -115,6 +117,9 @@ function App() {
         </Route> 
         <Route exact path="/products">
           <Products totalitems={cart.total_items} products={products} OnAddToCart={handleAddToCart} />
+        </Route>
+        <Route exact path="/support">
+          <Support/>
         </Route>
         <Route exact path="/about" component={AboutPage} />
       </Router>

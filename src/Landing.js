@@ -9,7 +9,7 @@ const Landing = ({ products, OnAddToCart }) => {
             <AddHot  products={products} OnAddToCart={OnAddToCart} />
             <About />
             <Addarrivals products={products} OnAddToCart={OnAddToCart}/>
-            <Contact />
+            <Contact subheading="Tell us something!"/>
             <Footer />
         </div>
     )

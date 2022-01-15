@@ -6,7 +6,7 @@ import { useForm, FormProvider } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import "./Checkout.css"
 
-const AddressForm = ({ checkoutToken, next }) => {
+const AddressForm = ({ checkoutToken, next ,setShippingCost}) => {
 
     const methods = useForm();
     const [shippingCountries, setShippingCountries] = useState([]);
@@ -18,7 +18,8 @@ const AddressForm = ({ checkoutToken, next }) => {
 
     const countries = Object.entries(shippingCountries).map(([code, name]) => ({ id: code, label: name }))
     const subdivisions = Object.entries(shippingSubdivisions).map(([code, name]) => ({ id: code, label: name }))
-    const options = shippingOptions.map((sO) => ({ id: sO.id, label: `${sO.description} - (${sO.price.formatted_with_symbol})` }))
+    const options = shippingOptions.map((sO) => ({ id: sO.id, label: `${sO.description} - (${sO.price.formatted_with_symbol})` }) )
+    setShippingCost(options)
 
     const fetchShippingCountries = async (checkoutTokenId) => {
         const { countries } = await commerce.services.localeListShippingCountries(checkoutTokenId);

@@ -59,7 +59,7 @@
 
 .header .icons a,
 .header .icons div {
-  font-size: 2.2rem;
+  font-size: 2.3rem;
   color: #fff;
   margin-left: 2rem;
   cursor: pointer;
@@ -73,7 +73,7 @@
   display: none;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 760px) {
   #menu-btn {
     display: inline-block;
   }
@@ -81,11 +81,26 @@
 
 .navigation {
   background-color: black;
-  height: 20vh;
-  width: 100vh;
-  margin-top: 150px;
+  height: 25vh;
+  width: 20vh;
+  margin-top: 250px;
   left: 0;
+  margin-left: 28vh;
   position: absolute;
   z-index: 1;
   padding-top: 20px;
+  float: right;
+  border: 1px solid white;
+  
+}
+
+.headerstyling{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 5rem;
+}
+.headerstyling HashLink:hover{
+  color: rebeccapurple;
+  
 }

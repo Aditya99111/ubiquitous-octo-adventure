@@ -50,7 +50,9 @@ body{
     background: var(--black) !important;
  
 }
-
+a{
+    color: #fff;
+}
 section{
     padding: 2rem 9%;
 }
@@ -58,10 +60,20 @@ section{
 .heading{
     font-size: 4rem;
     text-align: center;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     color: #fff;
 }
 .heading span {
+    color: var(--main-color);
+}
+
+.subheading{
+    font-size: 3rem;
+    text-align: center;
+    padding-bottom: 2rem;
+    color: #fff;
+}
+.subheading span {
     color: var(--main-color);
 }
 .btn{
