@@ -7,9 +7,9 @@ const Arrivals = (props) => {
         <HashLink to={`/products/#${props.id}`}>
             <div className="box">
                 <div className="icons">
-                    <a href className="fas fa-shopping-cart"></a>
-                    <a href={`/products/#${props.id}`} className="fas fa-eye"></a>
-                    <a href className="fas fa-share"></a>
+                    <HashLink to="#_" onClick={() => props.OnAddToCart(props.id, 1)} href="#_" className="fas fa-shopping-cart"></HashLink>
+                    <HashLink to={`/products/#${props.id}`} className="fas fa-eye"></HashLink>
+                    <HashLink to="#_" href className="fas fa-share"></HashLink>
                 </div>
                 <div className="image">
                     <img src={props.imageurl} alt="" />

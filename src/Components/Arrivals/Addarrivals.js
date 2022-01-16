@@ -10,7 +10,8 @@ const Addarrivals = ({ products, OnAddToCart }) => {
                 {products.slice(3, 9).map((product) => {
                     return (
                         <Arrivals
-                        products={products}
+                            OnAddToCart={OnAddToCart}
+                            products={products}
                             name={product.name}
                             id={product.id}
                             imageurl={product.image.url}

@@ -7,9 +7,9 @@ const Hot = (props) => {
             <Link to={`/products/#${props.id}`}>
                 <div className="box">
                     <div className="icons">
-                        <a onClick={() => props.OnAddToCart(props.id, 1)} className="fas fa-shopping-cart"></a>
-                        <a href={`/products/#${props.id}`} className="fas fa-eye"></a>
-                        <a href="#" className="fas fa-share"></a>
+                    <Link to="#_" onClick={() => props.OnAddToCart(props.id, 1)} href="#_" className="fas fa-shopping-cart"></Link>
+                    <Link to={`/products/#${props.id}`} className="fas fa-eye"></Link>
+                    <Link to="#_" className="fas fa-share"></Link>
                     </div>
                     <div className="image">
                         <img src={props.imageurl} alt="" />

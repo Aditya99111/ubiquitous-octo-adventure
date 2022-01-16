@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { Link ,useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 const Header = ({ totalitems }) => {
+  const location = useLocation()
+  console.log(location)
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
   const toggleHamburger = () => {
@@ -18,14 +20,14 @@ const Header = ({ totalitems }) => {
       </Link>
 
       <nav className="navbar">
-        <HashLink to="/#home" className="active">
+        <HashLink to="/#home" className={location.hash === `#home` ? "active" : ""}>
           Home
         </HashLink>
-        <HashLink to="/#hot">top picks</HashLink>
-        <HashLink to="/#about">About</HashLink>
-        <HashLink to="/Products">Products</HashLink>
-        <HashLink to="/#arrivals">arrivals</HashLink>
-        <HashLink to="/#contact">contact</HashLink>
+        <HashLink className={location.hash === `#hot` ? "active" : ""} to="/#hot">top picks</HashLink>
+        <HashLink className={location.hash === `#about` ? "active" : ""} to="/#about">About</HashLink>
+        <HashLink className={location.pathname === `/Products` ? "active" : ""} to="/Products">Products</HashLink>
+        <HashLink className={location.hash === `#arrivals` ? "active" : ""} to="/#arrivals">arrivals</HashLink>
+        <HashLink className={location.hash === `#contact` ? "active" : ""} to="/#contact">contact</HashLink>
       </nav>
 
       <div className="icons">
@@ -57,6 +59,7 @@ const Header = ({ totalitems }) => {
         <HashLink to="/#contact" style={{ fontSize: "17px",marginRight: "5px" }}>contact</HashLink>
       </div>
       </div>
+      
     </header>
   );
 };
