@@ -10,9 +10,13 @@ const Review = ({checkoutToken}) => {
                     <ListItem style={{padding: "10px 0"}} key={product.name}>
                         <ListItemText primary={product.name} secondary={`Quantity: ${product.quantity}`}/>
                         <Typography variant="body2">{product.line_total.formatted_with_symbol}</Typography>
-
                     </ListItem>
+                    
                 ))}
+                <ListItem style={{padding: "10px 0"}}>
+                        <ListItemText primary={"Shipping cost:"} />
+                        <Typography variant="body2">{checkoutToken.selected_shipping_method.price.formatted_with_symbol}</Typography>
+                    </ListItem>
                 <ListItem style={{padding: "10px 0"}}>
                     <ListItemText primary="total"/>
                     <Typography variant="subtitle1" style={{fontWeight: 700}}>
@@ -22,6 +26,7 @@ const Review = ({checkoutToken}) => {
 
                 </ListItem>
             </List>
+
         </div>
     )
 }

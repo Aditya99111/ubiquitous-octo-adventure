@@ -61,7 +61,6 @@ const AddressForm = ({ checkoutToken, next }) => {
     );
 
     setShippingOptions(options);
-    console.log(options);
     if (options.length !== 0) {
       setShippingOption(options[0].id);
     } else alert("We don't ship here.");
