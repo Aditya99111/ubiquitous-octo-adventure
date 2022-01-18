@@ -16,7 +16,6 @@ function App() {
   const [cart, setCart] = useState({});
   const [order, setOrder] = useState({});
   const [errorMessage , setErrorMessage] = useState('')
-  const [shippingCost , setShippingCost] = useState("10")
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
 
@@ -107,8 +106,6 @@ function App() {
         </Route> 
         <Route exact path="/checkout" >
           <Checkout 
-          shippingCost={shippingCost}
-          setShippingCost={setShippingCost}
           cart={cart}
           order={order}
           onCaptureCheckout={handleCaptureCheckout}

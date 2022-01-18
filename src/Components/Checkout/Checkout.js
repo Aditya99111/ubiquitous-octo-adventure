@@ -7,7 +7,7 @@ import useStyles from './styles';
 import AddressForm from "./AddressForm"
 import PaymentForm from "./PaymentForm"
 const steps = ['shipping address','payment details']
-const Checkout = ({cart , order , onCaptureCheckout , error,setShippingCost ,shippingCost}) => {
+const Checkout = ({cart , order , onCaptureCheckout , error,}) => {
     const classes = useStyles();
     const [activeStep , setActiveStep] = useState(0);
     const[shippingData, setShippingData]= useState({})
@@ -37,7 +37,7 @@ const Checkout = ({cart , order , onCaptureCheckout , error,setShippingCost ,shi
       nextStep();
     }
 
-    const Form = () => activeStep ===0 ? <AddressForm checkoutToken={checkoutToken} next={next} setShippingCost={setShippingCost}/> : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken} backStep={backStep} onCaptureCheckout={onCaptureCheckout} nextStep={nextStep} shippingCost={shippingCost}/>
+    const Form = () => activeStep ===0 ? <AddressForm checkoutToken={checkoutToken} next={next}/> : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken} backStep={backStep} onCaptureCheckout={onCaptureCheckout} nextStep={nextStep} />
     let Confirmation = () =>  order.customer ? (
         <div>
             <Typography variant="h5"> thank you for your purchase , {order.customer.firstname} {order.customer.lastname}</Typography>
